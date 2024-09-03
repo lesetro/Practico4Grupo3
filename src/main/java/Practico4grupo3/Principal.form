@@ -54,11 +54,6 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenuMostrar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Mostrar"/>
-          </Properties>
-        </Menu>
         <Menu class="javax.swing.JMenu" name="jMenuSAlir">
           <Properties>
             <Property name="text" type="java.lang.String" value="Salir"/>
