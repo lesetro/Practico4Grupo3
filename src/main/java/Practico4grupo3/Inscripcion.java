@@ -6,6 +6,7 @@ package Practico4grupo3;
 
 import Practico4grupo3.Materia;
 import Practico4grupo3.Alumno;
+import java.util.Objects;
 
 
 public class Inscripcion {
@@ -13,13 +14,39 @@ public class Inscripcion {
     private Alumno alumno;  
     private Materia materia;  
 
-    // Constructor  
+    
     public Inscripcion(Alumno alumno, Materia materia) {  
         this.alumno = alumno;  
         this.materia = materia;  
     }  
 
-    // Getters  
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 23 * hash + Objects.hashCode(this.alumno);
+        hash = 23 * hash + Objects.hashCode(this.materia);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Inscripcion other = (Inscripcion) obj;
+        if (!Objects.equals(this.alumno, other.alumno)) {
+            return false;
+        }
+        return Objects.equals(this.materia, other.materia);
+    }
+
+     
     public Alumno getAlumno() {  
         return alumno;  
     }  
@@ -28,7 +55,7 @@ public class Inscripcion {
         return materia;  
     }  
 
-    // Método para representar la inscripción como una cadena  
+    
     @Override  
     public String toString() {  
         return "Inscripción: " + alumno.getApellido() + " en " + materia.getNombre();  
