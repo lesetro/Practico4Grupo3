@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author Personal
 // */
 public class JinternalRegistro extends javax.swing.JInternalFrame {
-private HashSet<Inscripcion> inscripciones;
+    private HashSet<Inscripcion> inscripciones;
    
     public JinternalRegistro() {
         initComponents();
@@ -28,8 +28,8 @@ private HashSet<Inscripcion> inscripciones;
         private void cargarDatos(){
         jComboAlumno.removeAllItems();
         for (Alumno alumno : Principal.alumnos) {
-        jComboAlumno.addItem(alumno.getApellido());
-        
+         jComboAlumno.addItem(alumno.getApellido());
+         
          jComboMateria.removeAllItems();
         for (Materia materia : Principal.materias) {
         jComboMateria.addItem(materia.getNombre());
@@ -62,7 +62,6 @@ private HashSet<Inscripcion> inscripciones;
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextMostrar = new javax.swing.JTextArea();
 
-        setBackground(new java.awt.Color(204, 204, 255));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
@@ -111,7 +110,6 @@ private HashSet<Inscripcion> inscripciones;
             }
         });
 
-        jTextMostrar.setBackground(new java.awt.Color(153, 153, 255));
         jTextMostrar.setColumns(20);
         jTextMostrar.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jTextMostrar.setForeground(new java.awt.Color(0, 0, 0));
@@ -197,6 +195,7 @@ private HashSet<Inscripcion> inscripciones;
          // Obtener selecciones de los JComboBox
         String nombreAlumnoSeleccionado = (String) jComboAlumno.getSelectedItem();
         String nombreMateriaSeleccionada = (String) jComboMateria.getSelectedItem();
+        
 
         // Encontrar el Alumno y la Materia seleccionados en los HashSet
         Alumno alumnoSeleccionado = null;

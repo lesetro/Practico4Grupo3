@@ -10,6 +10,7 @@ import Practico4grupo3.JinternalAlumno;
 import Practico4grupo3.Materia;
 import Practico4grupo3.Alumno;
 import java.util.HashSet;
+import javax.swing.JFrame;
 
 /**
  *
