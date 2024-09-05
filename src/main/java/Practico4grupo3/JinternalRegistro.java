@@ -67,12 +67,13 @@ public class JinternalRegistro extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         jLabel1.setText("Elija una Materia");
 
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         jLabel3.setText("Elija un alumno");
 
+        jButton1.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         jButton1.setText("Inscribir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,6 +81,7 @@ public class JinternalRegistro extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         jButton2.setText("Salir");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,7 +89,7 @@ public class JinternalRegistro extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Century Schoolbook", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
         jLabel2.setText("Formulario de inscripcion ");
 
         jComboMateria.setToolTipText("");
@@ -103,6 +105,7 @@ public class JinternalRegistro extends javax.swing.JInternalFrame {
             }
         });
 
+        jButtonMostrar.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         jButtonMostrar.setText("Mostrar");
         jButtonMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +117,7 @@ public class JinternalRegistro extends javax.swing.JInternalFrame {
         jTextMostrar.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jTextMostrar.setForeground(new java.awt.Color(0, 0, 0));
         jTextMostrar.setRows(5);
-        jTextMostrar.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 18))); // NOI18N
+        jTextMostrar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 18))); // NOI18N
         jScrollPane1.setViewportView(jTextMostrar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

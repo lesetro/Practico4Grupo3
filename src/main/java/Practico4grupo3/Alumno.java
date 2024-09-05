@@ -2,6 +2,7 @@ package Practico4grupo3;
 
 import Practico4grupo3.Materia;
 import java.util.HashSet;
+import javax.swing.JOptionPane;
 
 public class Alumno {
     private Integer nroLegajo;
@@ -40,9 +41,7 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public void agregarMateria(Materia materia) {
-        materias.add(materia); // HashSet previene duplicados automáticamente
-    }
+    
 
     public int cantidadMaterias() {
         return materias.size();
@@ -54,5 +53,19 @@ public class Alumno {
 
     public void setMaterias(HashSet<Materia> materias) {
         this.materias = materias;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Alumno alumno = (Alumno) o;
+
+        return nroLegajo.equals(alumno.nroLegajo);
+    }
+    @Override
+    public int hashCode() {
+        return nroLegajo.hashCode();
     }
 }

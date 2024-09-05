@@ -59,18 +59,19 @@ public class JinternalAlumno extends javax.swing.JInternalFrame {
         setAlignmentX(0.8F);
         setAlignmentY(0.9F);
 
-        jLabel1.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         jLabel1.setText("Legajo");
 
-        jLabel2.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         jLabel2.setText("Apellido");
 
-        jLabel3.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         jLabel3.setText("Nombre");
 
-        jLabel4.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
         jLabel4.setText("Formulario Alumno");
 
+        jButton1.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         jButton1.setText("Guardar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +79,7 @@ public class JinternalAlumno extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         jButton2.setText("Nuevo");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +87,7 @@ public class JinternalAlumno extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton3.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         jButton3.setText("Salir");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,20 +113,20 @@ public class JinternalAlumno extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(28, 28, 28)
+                                .addGap(3, 3, 3)
                                 .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(43, 43, 43)
-                                .addComponent(txtLegajo))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(28, 28, 28)
-                                .addComponent(txtApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)))))
+                                .addGap(3, 3, 3)
+                                .addComponent(txtApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtLegajo)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -148,7 +151,7 @@ public class JinternalAlumno extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(jButton2)
@@ -158,7 +161,7 @@ public class JinternalAlumno extends javax.swing.JInternalFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(57, 57, 57)
                     .addComponent(jLabel4)
-                    .addContainerGap(299, Short.MAX_VALUE)))
+                    .addContainerGap(288, Short.MAX_VALUE)))
         );
 
         pack();
@@ -179,9 +182,14 @@ public class JinternalAlumno extends javax.swing.JInternalFrame {
         String apellido = txtApellido.getText();
         Alumno nuevoAlumno = new Alumno(numero, apellido, nombre);
         
-       Principal.alumnos.add(nuevoAlumno);
+       if(Principal.alumnos.contains(nuevoAlumno)){
+           JOptionPane.showMessageDialog(this, "El alumno ya fue registrado.", "ERROR", JOptionPane.ERROR_MESSAGE);
+       }else{
+           Principal.alumnos.add(nuevoAlumno);
+           JOptionPane.showMessageDialog(this, "Se guardo sactifactoriamente ");
+       }
         
-        JOptionPane.showMessageDialog(this, "Se guardo sactifactoriamente ");
+        
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(this, "Error al ingresar numeros ");
             this.txtLegajo.setText("");

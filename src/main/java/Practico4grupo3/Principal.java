@@ -11,6 +11,7 @@ import Practico4grupo3.Materia;
 import Practico4grupo3.Alumno;
 import java.util.HashSet;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -75,7 +76,7 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuMateria.setText("Materia");
 
-        jMenuItem1.setText("Agregar MAteria");
+        jMenuItem1.setText("Agregar Materia");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -145,7 +146,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuSAlirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSAlirActionPerformed
-        System.exit(0);
+        dispose();
+    
         
     }//GEN-LAST:event_jMenuSAlirActionPerformed
 

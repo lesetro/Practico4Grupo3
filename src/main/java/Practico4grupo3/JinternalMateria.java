@@ -57,6 +57,7 @@ public class JinternalMateria extends javax.swing.JInternalFrame {
         setResizable(true);
         setTitle("Materias");
 
+        GuardarMateria.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         GuardarMateria.setText("Guardar");
         GuardarMateria.setMaximumSize(new java.awt.Dimension(60, 30));
         GuardarMateria.setMinimumSize(new java.awt.Dimension(60, 30));
@@ -66,6 +67,7 @@ public class JinternalMateria extends javax.swing.JInternalFrame {
             }
         });
 
+        NuevoMateria.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         NuevoMateria.setText("Nuevo");
         NuevoMateria.setMaximumSize(new java.awt.Dimension(60, 30));
         NuevoMateria.setMinimumSize(new java.awt.Dimension(60, 30));
@@ -75,6 +77,7 @@ public class JinternalMateria extends javax.swing.JInternalFrame {
             }
         });
 
+        SalirMateria.setFont(new java.awt.Font("Ebrima", 0, 12)); // NOI18N
         SalirMateria.setText("Salir");
         SalirMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,10 +85,13 @@ public class JinternalMateria extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         jLabel1.setText("Codigo de Materia");
 
+        jLabel2.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         jLabel2.setText("Nombre de la materia");
 
+        jLabel3.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         jLabel3.setText("Año al que pertenece ");
 
         jLabel4.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
@@ -97,11 +103,11 @@ public class JinternalMateria extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtAñoMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,7 +133,7 @@ public class JinternalMateria extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -158,9 +164,14 @@ public class JinternalMateria extends javax.swing.JInternalFrame {
         String nombreMateria = txtNombreMateria.getText();
         
         Materia nuevaMateria = new Materia( codigoMateria, nombreMateria, añoMateria);
-        Principal.materias.add(nuevaMateria);
         
-        JOptionPane.showMessageDialog(this, "Se guardo sactifactoriamente ");
+        
+        if(Principal.materias.contains(nuevaMateria)){
+            JOptionPane.showMessageDialog(this, "La materia ya fue registrada.", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }else{
+            Principal.materias.add(nuevaMateria);
+            JOptionPane.showMessageDialog(this, "La materia fue guardada satisfactoriamente.");
+        }
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(this, "Error al ingresar numeros ");
             txtAñoMateria.setText("");
