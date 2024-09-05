@@ -38,6 +38,7 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         escritorio = new javax.swing.JDesktopPane();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuAlumno = new javax.swing.JMenu();
         jMenuItemAgrAlumno = new javax.swing.JMenuItem();
@@ -45,19 +46,32 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuRegistro = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuSAlir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Practico4grupo3/exit_7509679.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        escritorio.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escritorioLayout.createSequentialGroup()
+                .addGap(0, 451, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 477, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escritorioLayout.createSequentialGroup()
+                .addContainerGap(399, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
         jMenuBar1.setFont(new java.awt.Font("Segoe UI Symbol", 3, 36)); // NOI18N
@@ -98,14 +112,6 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuRegistro);
 
-        jMenuSAlir.setText("Salir");
-        jMenuSAlir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuSAlirActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(jMenuSAlir);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -145,11 +151,9 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void jMenuSAlirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSAlirActionPerformed
-        dispose();
-    
-        
-    }//GEN-LAST:event_jMenuSAlirActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+//        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,6 +192,7 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenuAlumno;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -195,6 +200,5 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemAgrAlumno;
     private javax.swing.JMenu jMenuMateria;
     private javax.swing.JMenu jMenuRegistro;
-    private javax.swing.JMenu jMenuSAlir;
     // End of variables declaration//GEN-END:variables
 }
